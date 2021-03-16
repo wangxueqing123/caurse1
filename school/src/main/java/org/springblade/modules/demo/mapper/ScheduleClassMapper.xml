@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.demo.mapper.ScheduleClassMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="scheduleClassResultMap" type="org.springblade.modules.demo.entity.ScheduleClass">
+        <id column="id" property="id"/>
+        <result column="weekday" property="weekday"/>
+        <result column="one" property="one"/>
+        <result column="two" property="two"/>
+        <result column="three" property="three"/>
+        <result column="four" property="four"/>
+        <result column="five" property="five"/>
+        <result column="six" property="six"/>
+        <result column="seven" property="seven"/>
+        <result column="eight" property="eight"/>
+        <result column="nine" property="nine"/>
+        <result column="ten" property="ten"/>
+    </resultMap>
+
+
+    <select id="selectScheduleClassPage" resultMap="scheduleClassResultMap">
+        select * from t_schedule_class where is_deleted = 0
+    </select>
+
+</mapper>

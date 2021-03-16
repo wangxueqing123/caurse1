@@ -1,0 +1,10 @@
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1354317599214682118', 1123598815738675201, 'scheduleclass', '班级课程表', 'menu', '/demo/scheduleclass', NULL, 1, 1, 0, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1354317599214682119', '1354317599214682118', 'scheduleclass_add', '新增', 'add', '/demo/scheduleclass/add', 'plus', 1, 2, 1, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1354317599214682120', '1354317599214682118', 'scheduleclass_edit', '修改', 'edit', '/demo/scheduleclass/edit', 'form', 2, 2, 2, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1354317599214682121', '1354317599214682118', 'scheduleclass_delete', '删除', 'delete', '/api/blade-demo/scheduleclass/remove', 'delete', 3, 2, 3, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1354317599214682122', '1354317599214682118', 'scheduleclass_view', '查看', 'view', '/demo/scheduleclass/view', 'file-text', 4, 2, 2, 1, NULL, 0);

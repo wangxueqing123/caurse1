@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.demo.mapper.ScoreMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="scoreResultMap" type="org.springblade.modules.demo.entity.Score">
+        <result column="id" property="id"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="name" property="name"/>
+        <result column="cname" property="cname"/>
+        <result column="grade" property="grade"/>
+        <result column="chinese" property="chinese"/>
+        <result column="math" property="math"/>
+        <result column="english" property="english"/>
+        <result column="politic" property="politic"/>
+        <result column="history" property="history"/>
+        <result column="geography" property="geography"/>
+        <result column="physic" property="physic"/>
+        <result column="chemistry" property="chemistry"/>
+        <result column="biology" property="biology"/>
+        <result column="rationalization" property="rationalization"/>
+        <result column="comprehensive" property="comprehensive"/>
+    </resultMap>
+
+
+    <select id="selectScorePage" resultMap="scoreResultMap">
+        select * from t_score where is_deleted = 0
+    </select>
+    <select id="selectScoreById" resultType="org.springblade.modules.demo.vo.ScoreVO">
+        select * from t_score where id=#{id}
+    </select>
+
+</mapper>

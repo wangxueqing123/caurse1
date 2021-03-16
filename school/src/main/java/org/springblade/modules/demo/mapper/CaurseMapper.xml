@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.demo.mapper.CaurseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="caurseResultMap" type="org.springblade.modules.demo.entity.Caurse">
+        <id column="id" property="id"/>
+        <result column="semester" property="semester"/>
+        <result column="grade_no" property="gradeNo"/>
+        <result column="class_no" property="classNo"/>
+        <result column="course_no" property="courseNo"/>
+        <result column="course_name" property="courseName"/>
+        <result column="teacher_no" property="teacherNo"/>
+        <result column="realname" property="realname"/>
+        <result column="courseAttr" property="courseAttr"/>
+        <result column="studentNum" property="studentNum"/>
+        <result column="weeks_sum" property="weeksSum"/>
+        <result column="weeks_number" property="weeksNumber"/>
+        <result column="isFix" property="isFix"/>
+        <result column="class_time" property="classTime"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="number" property="number"/>
+    </resultMap>
+    <insert id="insertBaseData">
+        insert into t_schedule_class(weekday)
+        values
+        ('星期一'),
+        ('星期二'),
+        ('星期三'),
+        ('星期四'),
+        ('星期五'),
+        ('星期六'),
+        ('星期天')
+    </insert>
+    <insert id="insertBaseData1">
+        insert into t_schedule_teacher(weekday)
+        values
+        ('星期一'),
+        ('星期二'),
+        ('星期三'),
+        ('星期四'),
+        ('星期五'),
+        ('星期六'),
+        ('星期天')
+    </insert>
+    <delete id="deleteTable">
+        delete from t_schedule_class
+    </delete>
+    <delete id="deleteTeacherCourse">
+        delete from t_schedule_teacher
+    </delete>
+
+
+    <select id="selectCaursePage" resultMap="caurseResultMap">
+        select * from t_caurse where is_deleted = 0
+    </select>
+    <select id="selectTeacherNo" resultType="org.springblade.modules.demo.entity.Caurse">
+        SELECT teacher_no FROM `t_caurse` WHERE course_name=#{courseName} GROUP BY teacher_no
+    </select>
+
+</mapper>

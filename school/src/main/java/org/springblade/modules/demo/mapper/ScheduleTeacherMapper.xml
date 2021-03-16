@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.demo.mapper.ScheduleTeacherMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="scheduleTeacherResultMap" type="org.springblade.modules.demo.entity.ScheduleTeacher">
+        <id column="id" property="id"/>
+        <result column="weekday" property="weekday"/>
+        <result column="one" property="one"/>
+        <result column="two" property="two"/>
+        <result column="three" property="three"/>
+        <result column="four" property="four"/>
+        <result column="five" property="five"/>
+        <result column="six" property="six"/>
+        <result column="seven" property="seven"/>
+        <result column="eight" property="eight"/>
+        <result column="nine" property="nine"/>
+        <result column="ten" property="ten"/>
+        <result column="name" property="name"/>
+        <result column="subject" property="subject"/>
+    </resultMap>
+    <insert id="insertBaseData">
+        insert into t_schedule_teacher (weekday,self_study)
+        values("星期一","语文"),("星期二","英语"),("星期三","语文"),("星期四","英语"),("星期五","语文"),
+        ("星期六","英语"),("星期天","")
+    </insert>
+
+
+    <select id="selectScheduleTeacherPage" resultMap="scheduleTeacherResultMap">
+        select * from t_schedule_teacher where is_deleted = 0
+    </select>
+    <select id="getList" resultType="org.springblade.modules.demo.vo.ScheduleTeacherVO">
+        select * from t_schedule_teacher where id=#{id}
+    </select>
+
+</mapper>

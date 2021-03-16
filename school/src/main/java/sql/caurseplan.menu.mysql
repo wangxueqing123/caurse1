@@ -1,0 +1,10 @@
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1347456096297586694', 1123598815738675201, 'caurseplan', '课程', 'menu', '/demo/caurseplan', NULL, 1, 1, 0, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1347456096297586695', '1347456096297586694', 'caurseplan_add', '新增', 'add', '/demo/caurseplan/add', 'plus', 1, 2, 1, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1347456096297586696', '1347456096297586694', 'caurseplan_edit', '修改', 'edit', '/demo/caurseplan/edit', 'form', 2, 2, 2, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1347456096297586697', '1347456096297586694', 'caurseplan_delete', '删除', 'delete', '/api/blade-demo/caurseplan/remove', 'delete', 3, 2, 3, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1347456096297586698', '1347456096297586694', 'caurseplan_view', '查看', 'view', '/demo/caurseplan/view', 'file-text', 4, 2, 2, 1, NULL, 0);
